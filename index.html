@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+<body oncontextmenu="return false;" >
+
+    <header class="container">
+        <div class="logo" id="logo"></div>
+        <div class="theme">
+            <i class="fa fa-moon" id="toggle-theme"></i>
+        </div>
+    </header>
+    
+    <div class="block">
+        <div class="user-msg">
+            <p><i id="user-msg-icon" class="fa" aria-hidden="true"></i> <span id="user-msg-heading"></span></p>
+            <p id="user-msg-content"></p>
+        </div>
+    </div>
+    <main>
+        
+        <div class="timer draggable">20:00</div>
+        <div class="box" id="questions">
+            <div class="start-test-box">
+                <button type="button" id="start-test">Start Test</button>
+
+                <div class="note">
+                    <b>Note</b>
+                    <ul>
+                        <li>There are 50 multiple-choice questions, and each question has four options.</li>
+                        <li>There will be a timer on the screen. As soon as you run out of time, the test will be automatically saved.</li>
+                        <li>You can't move to the next question without attempting the current one.</li>
+                        <li>You can move to previous questions and can also update your answers.</li>
+                        <li>The test will be in fullscreen mode.</li>
+                        <li>The test will be reset in the following cases: 
+                            <ul>
+                                <li>If you try to exit fullscreen mode.</li>
+                                <li>If you try to navigate away from the test.</li>
+                                <li>If you try to inspect the page.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div class="ques-nos"></div>
+    </main>
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <!-- Website Info -->
+    <script src="js/web_info.js"></script>
+
+    <!-- Ques Ans -->
+    <script src="js/ques_ans.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

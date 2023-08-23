@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+:root {
+  --boxShadow: 0 0 3px 2px rgba(0, 0, 0, 0.8);
+  --bgColor: #2c3333;
+  --bgColorLight: #2c333385;
+  --clr: #f8f6f4;
+  --boxShadow2: 0 0 3px 2px rgba(255, 255, 255, 0.8);
+}
+body {
+  position: relative;
+  background-color: var(--bgColor);
+  color: var(--clr);
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+}
+body.light {
+  --boxShadow: 0 0 3px 2px rgba(255, 255, 255, 0.8);
+  --bgColor: #eee2de;
+  --bgColorLight: #eee2de85;
+  --clr: #2b2a4c;
+  --boxShadow2: 0 0 3px 2px rgba(0, 0, 0, 0.8);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+  padding: 0 75px;
+}
+header {
+  height: 70px;
+  box-shadow: var(--boxShadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo {
+  font-size: 1.2rem;
+  letter-spacing: 0.15rem;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 800;
+}
+header .theme i {
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--clr);
+}
+
+/* Main */
+
+.block{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bgColorLight);
+  inset: 0;
+  z-index: 9;
+  display: none;
+
+}
+.block.yes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-msg{
+  width: 500px;
+  background-color: var(--bgColor);
+  color: var(--clr);
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: var(--boxShadow2);
+}
+.user-msg .fa-exclamation-circle{
+  color: #f00;
+}
+.user-msg .fa-check{
+  color: #0f0;
+}
+.user-msg p:first-child{
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.box {
+  width: 500px;
+  margin: auto;
+  margin-top: 60px;
+  box-shadow: var(--boxShadow);
+  min-height: 0;
+  padding: 12px 18px;
+  border-radius: 10px;
+}
+.box h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+}
+.form-group {
+  margin: 10px 0;
+}
+.form-group label {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+.form-group input:not(input[type="radio"]) {
+  width: 100%;
+  padding: 5px 8px;
+  background-color: transparent;
+  border: 1px solid var(--clr);
+  color: var(--clr);
+  outline: none;
+}
+.form-group label:first-child {
+  margin-right: 10px;
+}
+input[type="radio"] {
+  /* display: none; */
+  opacity: 0;
+  position: relative;
+}
+.radio-label {
+  display: block;
+}
+
+.gen {
+  position: relative;
+  margin-right: 12px;
+}
+.gen::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: 2px;
+  border: 1px solid var(--clr);
+  left: -18px;
+  display: flex;
+  align-items: center;
+}
+.gen.ques-gen::before{
+    top: 4px;
+}
+input[type="radio"]:checked + .gen::before {
+  content: "✔";
+}
+
+button {
+  padding: 4px 8px;
+  background-color: var(--bgColor);
+  border: 1px solid var(--clr);
+  color: var(--clr);
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+.submitBtn{
+  background-color: var(--clr);
+  border: 1px solid var(--bgColor);
+  color: var(--bgColor);
+}
+button:not(button[disabled]):hover{
+    background-color: var(--clr);
+    border: 1px solid var(--bgColor);
+    color: var(--bgColor);
+}
+.submitBtn:not(button[disabled]):hover{
+    background-color: var(--bgColor);
+    border: 1px solid var(--clr);
+    color: var(--clr);
+}
+button[disabled]{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.box.hide{
+    display: none;
+}
+
+.question h3{
+    text-align: left;
+}
+.question label{
+    display: block ;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.buttons.next{
+    justify-content: flex-end;
+}
+.buttons.prev{
+    justify-content: flex-start;
+}
+.timer{
+    position: absolute;
+    right: 3%;
+    top: 13%;
+    width: 60px;
+    height: 60px;
+    background-color: var(--clr);
+    color: var(--bgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1rem;
+    box-shadow: var(--boxShadow2);
+    cursor: grab;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.timer.on{
+  opacity: 1;
+}
+.timer.orange{
+  color: orange;
+  font-weight: bold;
+  transform: scale(1);
+  animation: blinkSlow 0.8s linear 0s infinite;
+}
+
+.timer.red{
+  color: red;
+  font-weight: bold;
+  transform: scale(1);
+  animation: blinkFast 0.4s linear 0s infinite;
+}
+@keyframes blinkSlow {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+@keyframes blinkFast {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.start-test-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.note{
+  text-align: left;
+  width: 100%;
+  margin-top: 20px;
+}
+.note b{
+  font-size: 0.9rem;
+}
+.note ul{
+  /* list-style: none; */
+  padding-left: 15px;
+  line-height: 1.8rem;
+}
+.note ul li{
+  font-size: 0.7rem;
+}
+.ques-nos{
+  width: 500px;
+  margin: auto;
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  min-height: 0;
+  justify-content: space-evenly;
+}
+
+.ques-no{
+  margin: 6px 12px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+.ques-no.active{
+ color: green;
+ font-weight: 900;
+ opacity: 1;
+  
+}
+
+
+
+/* Response */
+@media (max-width: 600px) {
+  .user-msg p:first-child{
+    font-size: 1.2rem;
+  }
+  .box h3{
+    font-size: 1.1rem;
+  }
+  header {
+    justify-content: center;
+  }
+  .box, .ques-nos, .user-msg {
+    width: 400px;
+  }
+  header .theme {
+    position: fixed;
+    bottom: 12px;
+    right: 32px;
+  }
+  header .theme i {
+    font-size: 1.5rem;
+  }
+  .timer{
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 450px) {
+
+  .box, .ques-nos, .user-msg  {
+    width: 340px;
+  }
+
+  header .logo{
+    font-size: 1rem;
+  }
+  .timer{
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+
+}
